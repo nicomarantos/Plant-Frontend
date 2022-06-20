@@ -30,18 +30,23 @@ export default {
         return require('../assets/Monstera.jpg')
       } else if (plant.botanicalName === 'Alocasia Zebrina') {
         return require('../assets/alocasia_zebrina.webp')
+      } else if (plant.botanicalName === 'Sanseviera') {
+        return require('../assets/Sanseviera.jpg')
       }
     }
   },
   mounted () {
+    const endpoint = process.env.VUE_APP_BACKEND_BASE_URL + '/api/v1/plant'
     const requestOptions = {
       method: 'GET',
       redirect: 'follow'
     }
 
-    fetch('https://localhost:8080/api/v1/plant', requestOptions)
+    fetch(endpoint, requestOptions)
       .then(response => response.json())
-      .then(result => console.log(result))
+      .then(result => result.forEach(plant => {
+        this.plantLexicon.push(plant)
+      }))
       .catch(error => console.log('error', error))
   }
 }
