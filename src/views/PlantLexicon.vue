@@ -1,13 +1,13 @@
 <template>
- <h1>Wilkommen zum Pflanzenlexikon</h1>
+ <h1>Wilkommen zum großen Pflanzenlexikon</h1>
   <div class="container-fluid">
     <div class="row row-cols-1 row-cols-md-2 g-4">
       <div class="col" v-for="plant in plantLexicon" :key="plant.id">
-          <div class="card">
+          <div class="card h-100">
             <img :src="getAvatar(plant)" class="card-img-top" :alt="plant.commonName + ' ' + plant.botanicalName">
             <div class="card-body">
-              <h5 class="card-title">{{plant.commonName}} {{plant.botanicalName}}</h5>
-              <p class="card-text">Das ist die {{plant.botanicalName}} oder zu Deutsch {{plant.commonName}}. Diese Pflanze ist {{plant.isSaved ? 'gespeichert': 'nicht gespeichert'}}</p>
+              <h5 class="card-title">{{plant.commonName}} oder auch {{plant.botanicalName}}</h5>
+              <p class="card-text">Das ist die {{plant.botanicalName}} oder zu Deutsch {{plant.commonName}}. Diese Pflanze wurde {{plant.isSaved ? 'gespeichert': 'noch nicht gespeichert'}}</p>
             </div>
           </div>
         </div>
@@ -21,20 +21,7 @@ export default {
   name: 'PlantLexicon',
   data () {
     return {
-      plantLexicon: [
-        {
-          id: 1,
-          commonName: 'Fensterblatt',
-          botanicalName: 'Monstera deliciosa',
-          isSaved: true
-        },
-        {
-          id: 2,
-          commonName: 'Pfeilblatt',
-          botanicalName: 'Alocasia Zebrina',
-          isSaved: true
-        }
-      ]
+      plantLexicon: []
     }
   },
   methods: {
@@ -45,6 +32,17 @@ export default {
         return require('../assets/alocasia_zebrina.webp')
       }
     }
+  },
+  mounted () {
+    const requestOptions = {
+      method: 'GET',
+      redirect: 'follow'
+    }
+
+    fetch('https://localhost:8080/api/v1/plant', requestOptions)
+      .then(response => response.json())
+      .then(result => console.log(result))
+      .catch(error => console.log('error', error))
   }
 }
 </script>
