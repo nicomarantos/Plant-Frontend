@@ -15,8 +15,8 @@ const routes = [
     component: PlantCalender
   },
   {
-    path: '/plantCalender',
-    name: 'PlantCalender',
+    path: '/plantLexicon',
+    name: 'PlantLexikon',
     component: PlantLexicon
   }
 ]

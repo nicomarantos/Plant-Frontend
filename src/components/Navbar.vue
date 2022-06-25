@@ -8,8 +8,8 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <div class="navbar-nav">
           <router-link class="nav-link" to="/">Home</router-link>
-          <router-link class="nav-link" to="/PlantCalender">PlantCalender</router-link>
-          <router-link class="nav-link" to="/PlantLexicon">PlantLexicon</router-link>
+          <router-link class="nav-link" to="/PlantCalender">Pflanzen Kalender</router-link>
+          <router-link class="nav-link" to="/PlantLexicon">Pflanzen Lexikon</router-link>
         </div>
       </div>
     </div>
