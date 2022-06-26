@@ -27,3 +27,7 @@ npm run lint
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
+
+### Fragen:
+Wie kann man Werte an eine Komponente übergeben?
+Wie kann man Bilder richitg anzeigen?
