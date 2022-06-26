@@ -1,4 +1,5 @@
 <template>
+
   <navbar></navbar>
   <router-view/>
 </template>
@@ -14,6 +15,9 @@ export default {
 
 <style>
 #app {
+body {
+  background-color: #DBF9FC;
+}
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

@@ -1,4 +1,5 @@
 <template>
+  <div class="p-3 mb-2 bg-success bg-gradient text-white">
   <div class="list-group-item list-group-item-success">
   <h1>Willkommen zum großen Pflanzenlexikon</h1>
   <div class="container-fluid">
@@ -10,7 +11,7 @@
               <h5 class="card-title">{{plant.commonName}} oder auch {{plant.botanicalName}}</h5>
               <p class="card-text">Das ist die {{plant.botanicalName}} oder zu Deutsch {{plant.commonName}}.
                 <br>Diese Pflanze wurde {{plant.isSaved ? 'gespeichert': 'noch nicht gespeichert'}}</p>
-             <div class ="card-text">
+             <div class =" mb-1 card-text">
                <button type="button" class="btn btn-success">Erfahre Mehr</button>
                 <p></p>
                 <button type="button" class="btn btn-primary btn-sm">add to Wateringchecklist <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-droplet" viewBox="0 0 16 16">
@@ -22,6 +23,7 @@
           </div>
         </div>
     </div>
+  </div>
   </div>
   </div>
 </template>
