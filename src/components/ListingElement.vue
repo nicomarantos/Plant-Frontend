@@ -1,14 +1,19 @@
 <template>
+  <div v-for="plant in ListingElement" :key="plant.id" >
+    <div v-if="plant.saved===true">
+<!-- <div class="col" v-for="plant in ListingElement" :key="plant.id"> -->
+
   <a href="#" class="list-group-item list-group-item-action " aria-current="true">
     <div class="d-flex w-100 justify-content-sm-between">
 
       <div>
-        <h2 class="mt-0">Monstera</h2>
-        <i>(Monstera deliciosa)</i>
+        <h2 class="mt-0">{{plant.commonName}}</h2>
+        <i>({{plant.botanicalName}})</i>
+        <i>({{plant.saved}})</i>
       </div>
 
       <div>
-        <h4> Days until Plant need to be watered again: <span class="badge bg-success rounded-pill justify-content-flex end">6 </span></h4>
+        <h4> Days until Plant need to be watered again: <span class="badge bg-success rounded-pill justify-content-flex end">{{plant.wateringperiod}}</span></h4>
         <div class="d-grid gap-2 col-14">
           <button type="button" class="btn-sm btn-primary"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-clockwise" viewBox="0 0 16 16">
             <path fill-rule="evenodd" d="M8 3a5 5 0 1 0 4.546 2.914.5.5 0 0 1 .908-.417A6 6 0 1 1 8 2v1z"/>
@@ -24,14 +29,35 @@
         </svg></button>
       </div>
     </div>
-
   </a>
   <br>
+ </div>
+  </div>
 </template>
 
 <script>
 export default {
-  name: 'Listing-element'
+  name: 'Listing-element',
+  data () {
+    return {
+      ListingElement: []
+    }
+  },
+
+  mounted () {
+    const endpoint = process.env.VUE_APP_BACKEND_BASE_URL + '/api/v1/plant'
+    const requestOptions = {
+      method: 'GET',
+      redirect: 'follow'
+    }
+
+    fetch(endpoint, requestOptions)
+      .then(response => response.json())
+      .then(result => result.forEach(plant => {
+        this.ListingElement.push(plant)
+      }))
+      .catch(error => console.log('error', error))
+  }
 }
 </script>
 
