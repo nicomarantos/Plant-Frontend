@@ -9,7 +9,6 @@
       <div>
         <h2 class="mt-0">{{plant.commonName}}</h2>
         <i>({{plant.botanicalName}})</i>
-        <i>({{plant.saved}})</i>
       </div>
 
       <div>
