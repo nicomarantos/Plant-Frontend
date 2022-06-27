@@ -2,8 +2,7 @@
 
   <div class="p-3 mb-2 bg-success bg-gradient text-white">
   <div class="list-group-item list-group-item-success">
-    <ListingElement></ListingElement>
-    <ListingElement></ListingElement>
+
     <ListingElement></ListingElement>
 
   </div>
@@ -17,7 +16,7 @@ export default {
   components: { ListingElement },
   data () {
     return {
-      plantLexicon: []
+      plantCalender: []
     }
   },
 
