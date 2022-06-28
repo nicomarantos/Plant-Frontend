@@ -41,11 +41,11 @@
               Days until Plant need to be watered again:
               <span
                 class="badge bg-success rounded-pill justify-content-flex end"
-              >{{ plant.wateringperiod }}</span
+              >{{ plant.wateringperiodCurrent }}</span
               >
             </h4>
             <div class="d-grid gap-2 col-14">
-              <button type="button" class="btn-sm btn-primary">
+              <button type="button" class="btn-sm btn-primary" @click="updateWateringperiod (plant)">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="16"
@@ -126,7 +126,7 @@ export default {
       }
     },
     deletePlant (plant) {
-      console.log("test")
+
       const endpoint = process.env.VUE_APP_BACKEND_BASE_URL + '/api/v1/plant/' + plant.id
 
       const myHeaders = new Headers();
@@ -137,7 +137,35 @@ export default {
         "botanicalName": plant.botanicalName,
         "description": plant.description,
         "wateringperiod": plant.wateringperiod,
+        "wateringperiodCurrent": plant.wateringperiodCurrent,
         "saved": false
+      });
+
+      const requestOptions = {
+        method: 'PUT',
+        headers: myHeaders,
+        body: raw,
+        redirect: 'follow'
+      };
+
+      fetch(endpoint, requestOptions)
+        .then(response => response.text())
+        .then(result => console.log(result))
+        .catch(error => console.log('error', error));
+    },
+    updateWateringperiod (plant) {
+      const endpoint = process.env.VUE_APP_BACKEND_BASE_URL + '/api/v1/plant/' + plant.id
+
+      const myHeaders = new Headers();
+      myHeaders.append("Content-Type", "application/json");
+
+      const raw = JSON.stringify({
+        "commonName": plant.commonName,
+        "botanicalName": plant.botanicalName,
+        "description": plant.description,
+        "wateringperiod": plant.wateringperiod,
+        "wateringperiodCurrent": plant.wateringperiod,
+        "saved": true
       });
 
       const requestOptions = {

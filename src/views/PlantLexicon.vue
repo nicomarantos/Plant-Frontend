@@ -62,6 +62,7 @@ export default {
         "botanicalName": plant.botanicalName,
         "description": plant.description,
         "wateringperiod": plant.wateringperiod,
+        "wateringperiodCurrent": plant.wateringperiodCurrent,
         "saved": true
       });
 
