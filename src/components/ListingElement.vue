@@ -21,7 +21,7 @@
     </button>
   </div>
 
-  <div v-for="plant in ListingElement" :key="plant.id">
+  <div v-for="plant in plants" :key="plant.id">
     <div v-if="plant.saved === true">
       <!-- <div class="col" v-for="plant in ListingElement" :key="plant.id"> -->
 <br>
@@ -95,10 +95,12 @@
 /*eslint-disable*/
 export default {
   name: "Listing-element",
-  data() {
-    return {
-      ListingElement: [],
-    };
+  props: {
+    plants: {
+      type: Array,
+      required: true
+
+    }
   },
   methods: {
 
@@ -181,22 +183,6 @@ export default {
         .then(result => console.log(result))
         .catch(error => console.log('error', error));
     }
-  },
-  mounted() {
-    const endpoint = process.env.VUE_APP_BACKEND_BASE_URL + "/api/v1/plant";
-    const requestOptions = {
-      method: "GET",
-      redirect: "follow",
-    };
-
-    fetch(endpoint, requestOptions)
-      .then((response) => response.json())
-      .then((result) =>
-        result.forEach((plant) => {
-          this.ListingElement.push(plant);
-        })
-      )
-      .catch((error) => console.log("error", error));
   },
 };
 </script>

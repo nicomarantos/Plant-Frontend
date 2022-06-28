@@ -3,7 +3,7 @@
   <div class="p-5 mb-2 bg-success bg-gradient text-white">
     <h1>Wateringlist</h1>
   <div class="list-group-item list-group-item-success">
-    <ListingElement></ListingElement>
+    <ListingElement :plants="this.plants"></ListingElement>
   </div>
     </div>
 </template>
@@ -15,7 +15,7 @@ export default {
   components: { ListingElement },
   data () {
     return {
-      plantCalender: []
+      plants: []
     }
   },
 
@@ -29,7 +29,7 @@ export default {
     fetch(endpoint, requestOptions)
       .then(response => response.json())
       .then(result => result.forEach(plant => {
-        this.plantCalender.push(plant)
+        this.plants.push(plant)
       }))
       .catch(error => console.log('error', error))
   }
