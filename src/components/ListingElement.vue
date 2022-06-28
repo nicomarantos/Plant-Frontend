@@ -69,9 +69,7 @@
 
           <div>
             <button
-              type="button"
-              class="btn btn-danger btn-sm justify-content-flex end"
-            >
+              class="btn btn-danger btn-sm justify-content-flex end" @click="deletePlant(plant)">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="16"
@@ -84,7 +82,7 @@
                   d="M11 1.5v1h3.5a.5.5 0 0 1 0 1h-.538l-.853 10.66A2 2 0 0 1 11.115 16h-6.23a2 2 0 0 1-1.994-1.84L2.038 3.5H1.5a.5.5 0 0 1 0-1H5v-1A1.5 1.5 0 0 1 6.5 0h3A1.5 1.5 0 0 1 11 1.5Zm-5 0v1h4v-1a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5ZM4.5 5.029l.5 8.5a.5.5 0 1 0 .998-.06l-.5-8.5a.5.5 0 1 0-.998.06Zm6.53-.528a.5.5 0 0 0-.528.47l-.5 8.5a.5.5 0 0 0 .998.058l.5-8.5a.5.5 0 0 0-.47-.528ZM8 4.5a.5.5 0 0 0-.5.5v8.5a.5.5 0 0 0 1 0V5a.5.5 0 0 0-.5-.5Z"
                 />
               </svg>
-            </button>
+           </button>
           </div>
         </div>
       </a>
@@ -102,29 +100,12 @@ export default {
       ListingElement: [],
     };
   },
-
-  mounted() {
-    const endpoint = process.env.VUE_APP_BACKEND_BASE_URL + "/api/v1/plant";
-    const requestOptions = {
-      method: "GET",
-      redirect: "follow",
-    };
-
-    fetch(endpoint, requestOptions)
-      .then((response) => response.json())
-      .then((result) =>
-        result.forEach((plant) => {
-          this.ListingElement.push(plant);
-        })
-      )
-      .catch((error) => console.log("error", error));
-  },
   methods: {
 
     sortPlants(name) {
       if (name === "wateringperiod") {
         this.ListingElement = this.ListingElement.sort((a, b) => {
-      return a.wateringperiod-b.wateringperiod
+          return a.wateringperiod-b.wateringperiod
         });
       }
       if (name === "commonName") {
@@ -140,14 +121,53 @@ export default {
           return 0;
         });
       }
-      ///else ifs wenn du mehr als nur 1 sort planst
       else {
         this.ListingElement = this.Listing - element;
       }
-
     },
+    deletePlant (plant) {
+      console.log("test")
+      const endpoint = process.env.VUE_APP_BACKEND_BASE_URL + '/api/v1/plant/' + plant.id
 
+      const myHeaders = new Headers();
+      myHeaders.append("Content-Type", "application/json");
 
+      const raw = JSON.stringify({
+        "commonName": plant.commonName,
+        "botanicalName": plant.botanicalName,
+        "description": plant.description,
+        "wateringperiod": plant.wateringperiod,
+        "saved": false
+      });
+
+      const requestOptions = {
+        method: 'PUT',
+        headers: myHeaders,
+        body: raw,
+        redirect: 'follow'
+      };
+
+      fetch(endpoint, requestOptions)
+        .then(response => response.text())
+        .then(result => console.log(result))
+        .catch(error => console.log('error', error));
+    }
+  },
+  mounted() {
+    const endpoint = process.env.VUE_APP_BACKEND_BASE_URL + "/api/v1/plant";
+    const requestOptions = {
+      method: "GET",
+      redirect: "follow",
+    };
+
+    fetch(endpoint, requestOptions)
+      .then((response) => response.json())
+      .then((result) =>
+        result.forEach((plant) => {
+          this.ListingElement.push(plant);
+        })
+      )
+      .catch((error) => console.log("error", error));
   },
 };
 </script>
