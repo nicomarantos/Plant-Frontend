@@ -120,18 +120,11 @@ export default {
       .catch((error) => console.log("error", error));
   },
   methods: {
+
     sortPlants(name) {
       if (name === "wateringperiod") {
         this.ListingElement = this.ListingElement.sort((a, b) => {
-          let plantA = a.wateringperiod.toLowerCase(),
-            plantB = b.wateringperiod.toLowerCase();
-          if (plantA < plantB) {
-            return -1;
-          }
-          if (plantA > plantB) {
-            return 1;
-          }
-          return 0;
+      return a.wateringperiod-b.wateringperiod
         });
       }
       if (name === "commonName") {
@@ -153,6 +146,8 @@ export default {
       }
 
     },
+
+
   },
 };
 </script>

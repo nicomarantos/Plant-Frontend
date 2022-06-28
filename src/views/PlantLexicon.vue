@@ -1,7 +1,7 @@
 <template>
   <div class="p-5 mb-2 bg-success bg-gradient text-white">
+    <h1>Plantlexcion</h1>
   <div class="list-group-item list-group-item-success">
-  <h1>Willkommen zum großen Pflanzenlexikon</h1>
   <div class="container-fluid">
     <div class="row row-cols-1 row-cols-md-2 g-4">
       <div class="col" v-for="plant in plantLexicon" :key="plant.id">
