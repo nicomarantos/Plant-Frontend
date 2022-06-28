@@ -1,5 +1,4 @@
 <template>
-
   <div class="p-5 mb-2 bg-success bg-gradient text-white">
     <h1>Wateringlist</h1>
   <div class="list-group-item list-group-item-success">
