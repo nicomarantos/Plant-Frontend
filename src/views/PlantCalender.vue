@@ -3,6 +3,7 @@
   <div class="p-5 mb-2 bg-success bg-gradient text-white">
     <h1>Wateringlist</h1>
   <div class="list-group-item list-group-item-success">
+    <sort-buttons :plants="this.plants"></sort-buttons>
     <ListingElement :plants="this.plants"></ListingElement>
   </div>
     </div>
@@ -10,9 +11,13 @@
 
 <script>
 import ListingElement from '@/components/ListingElement'
+import sortButtons from '@/components/sortButtons'
 export default {
   name: 'PlantCalender',
-  components: { ListingElement },
+  components: {
+    ListingElement,
+    sortButtons
+  },
   data () {
     return {
       plants: []
