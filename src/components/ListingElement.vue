@@ -2,8 +2,8 @@
   <div class="mt-1 d-flex w-100 justify-content-sm-start">
     <!-- der erste button ist implementiert -->
     <button
-      class="btn btn-sm btn-success margin:20px;"
-      @click="sortPlants('wateringperiod')"
+      class="btn btn-sm btn-success margin:20px;" type="submit"
+      @click="sortPlants('wateringperiodCurrent')"
     >
       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-calendar-week" viewBox="0 0 16 16">
         <path d="M11 6.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm-3 0a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm-5 3a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm3 0a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1z"/>
@@ -11,7 +11,7 @@
       </svg> sort by Days
     </button>
     <button
-      class="margin:20px btn btn-sm btn-success"
+      class="margin:20px btn btn-sm btn-success" type="submit"
       @click="sortPlants('commonName')"
     >
       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-translate" viewBox="0 0 16 16">
@@ -45,7 +45,7 @@
               >
             </h4>
             <div class="d-grid gap-2 col-14">
-              <button type="button" class="btn-sm btn-primary" @click="updateWateringperiod (plant)">
+              <button class="btn-sm btn-primary" type="submit" @click="updateWateringperiod (plant)">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="16"
@@ -69,7 +69,7 @@
 
           <div>
             <button
-              class="btn btn-danger btn-sm justify-content-flex end" @click="deletePlant(plant)">
+              class="btn btn-danger btn-sm justify-content-flex end" type="submit" @click="deletePlant(plant)">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="16"
@@ -103,9 +103,9 @@ export default {
   methods: {
 
     sortPlants(name) {
-      if (name === "wateringperiod") {
+      if (name === "wateringperiodCurrent") {
         this.ListingElement = this.ListingElement.sort((a, b) => {
-          return a.wateringperiod-b.wateringperiod
+          return a.wateringperiodCurrent-b.wateringperiodCurrent
         });
       }
       if (name === "commonName") {
@@ -152,6 +152,7 @@ export default {
         .then(response => response.text())
         .then(result => console.log(result))
         .catch(error => console.log('error', error));
+      window.location.reload()
     },
     updateWateringperiod (plant) {
       const endpoint = process.env.VUE_APP_BACKEND_BASE_URL + '/api/v1/plant/' + plant.id
