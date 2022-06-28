@@ -39,11 +39,14 @@ export default {
   },
   methods: {
     getAvatar (plant) {
-      if (plant.botanicalName === 'Monstera deliciosa') {
+      console.log(plant.commonName)
+      if (plant.botanicalName === 'Monstera Deliciosa') {
         return require('../assets/Monstera.jpg')
-      } else if (plant.botanicalName === 'Alocasia Zebrina') {
+      }
+      if (plant.botanicalName === 'Alocasia Zebrina') {
         return require('../assets/alocasia_zebrina.webp')
-      } else if (plant.botanicalName === 'Sanseviera') {
+      }
+      if (plant.botanicalName === 'Sanseviera') {
         return require('../assets/Sanseviera.jpg')
       }
     },
