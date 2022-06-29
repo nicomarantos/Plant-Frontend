@@ -2,7 +2,7 @@
   <div class="mt-1 d-flex w-100 justify-content-sm-start">
     <!-- der erste button ist implementiert -->
     <button
-      class="btn btn-sm btn-success margin:20px;" type="submit"
+      class="btn btn-sm btn-success" type="submit"
       @click="sortPlants('wateringperiodCurrent')"
     >
       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-calendar-week" viewBox="0 0 16 16">
