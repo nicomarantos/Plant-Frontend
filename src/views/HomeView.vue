@@ -1,7 +1,9 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Hello World"/>
+    <img alt="plantasticLogo" src="../assets/plantasticLogo.png">
+    <h2>Plantastic</h2>
+    <HelloWorld>
+    </HelloWorld>
   </div>
 </template>
 <script>

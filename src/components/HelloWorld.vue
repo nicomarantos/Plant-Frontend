@@ -6,7 +6,7 @@
 </template>
 <script>
 export default {
-  name: 'HelloWorld',
+  name: 'Plant-astic',
   props: {
     msg: String
   }
