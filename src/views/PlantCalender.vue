@@ -9,6 +9,7 @@
 </template>
 
 <script>
+/*eslint-disable*/
 import ListingElement from '@/components/ListingElement'
 import sortButtons from '@/components/sortButtons'
 export default {
@@ -17,13 +18,45 @@ export default {
     ListingElement,
     sortButtons
   },
+  methods :  {
+     updateWateringperiodCurrent(plant)
+    {
+      //if schleife mit saved==true noch rein
+      console.log('geht durch')
+        const endpoint = process.env.VUE_APP_BACKEND_BASE_URL + '/api/v1/plant/' + plant.id
+        const myHeaders = new Headers();
+        myHeaders.append("Content-Type", "application/json");
+
+        const raw = JSON.stringify({
+          "commonName": plant.commonName,
+          "botanicalName": plant.botanicalName,
+          "description": plant.description,
+          "wateringperiod": plant.wateringperiod,
+          "wateringperiodCurrent": plant.wateringperiod+1,
+          "day": plant.day,
+          "saved": true
+        });
+
+        const requestOptions = {
+          method: 'PUT',
+          headers: myHeaders,
+          body: raw,
+          redirect: 'follow'
+        };
+
+        fetch(endpoint, requestOptions)
+          .then(async response => await response.text())
+          .then(result => console.log(result))
+          .catch(error => console.log('error', error));
+    }
+
+  },
   data () {
     return {
       plants: []
     }
   },
-
-  mounted () {
+  mounted: async function() {
     const endpoint = process.env.VUE_APP_BACKEND_BASE_URL + '/api/v1/plant'
     const requestOptions = {
       method: 'GET',
@@ -35,9 +68,40 @@ export default {
       .then(result => result.forEach(plant => {
         this.plants.push(plant)
       }))
+      .then(plants=> {
+        return this.plants.forEach(plants=>{
+          const endpoint = process.env.VUE_APP_BACKEND_BASE_URL + '/api/v1/plant/' + plant.id
+          const myHeaders = new Headers();
+          myHeaders.append("Content-Type", "application/json");
+
+          const raw = JSON.stringify({
+            "commonName": plant.commonName,
+            "botanicalName": plant.botanicalName,
+            "description": plant.description,
+            "wateringperiod": plant.wateringperiod,
+            "wateringperiodCurrent": plant.wateringperiod+1,
+            "day": plant.day,
+            "saved": true
+          });
+
+          const requestOptions = {
+            method: 'PUT',
+            headers: myHeaders,
+            body: raw,
+            redirect: 'follow'
+          };
+
+          fetch(endpoint, requestOptions)
+            .then(async response => await response.json())
+            .then(result => console.log(result))
+            .catch(error => console.log('error', error));
+        })
+      })
       .catch(error => console.log('error', error))
   }
+
 }
+
 </script>
 
 <style scoped>

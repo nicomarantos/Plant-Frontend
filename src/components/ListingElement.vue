@@ -93,6 +93,7 @@ export default {
         "description": plant.description,
         "wateringperiod": plant.wateringperiod,
         "wateringperiodCurrent": plant.wateringperiod,
+        "day": plant.day,
         "saved": true
       });
 
@@ -121,6 +122,7 @@ export default {
         "description": plant.description,
         "wateringperiod": plant.wateringperiod,
         "wateringperiodCurrent": plant.wateringperiodCurrent,
+        "day": plant.day,
         "saved": false
       });
 

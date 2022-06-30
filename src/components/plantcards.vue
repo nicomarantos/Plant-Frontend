@@ -63,6 +63,7 @@ export default {
         "description": plant.description,
         "wateringperiod": plant.wateringperiod,
         "wateringperiodCurrent": plant.wateringperiodCurrent,
+        "day": plant.day,
         "saved": true
       });
 
