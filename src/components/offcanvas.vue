@@ -75,15 +75,17 @@ export default {
 
         const myHeaders = new Headers();
         myHeaders.append("Content-Type", "application/json");
-
         const raw = JSON.stringify({
           "commonName": this.commonName,
           "botanicalName": this.botanicalName,
           "description": this.description,
           "wateringperiod": this.wateringperiod,
           "wateringperiodCurrent": this.wateringperiod,
+          "day": 100,
           "saved": false
-        });
+        })
+        console.log("lief durch")
+        ;
 
         const requestOptions = {
           method: 'POST',
