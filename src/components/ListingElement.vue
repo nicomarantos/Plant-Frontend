@@ -82,6 +82,7 @@ export default {
   },
   methods: {
     updateWateringperiodCurrent (plant) {
+      const dayOfYear = date => Math.floor((date - new Date(date.getFullYear(), 0, 0)) / (1000 * 60 * 60 * 24))
       const endpoint = process.env.VUE_APP_BACKEND_BASE_URL + '/api/v1/plant/' + plant.id
 
       const myHeaders = new Headers();
@@ -93,7 +94,7 @@ export default {
         "description": plant.description,
         "wateringperiod": plant.wateringperiod,
         "wateringperiodCurrent": plant.wateringperiod,
-        "day": plant.day,
+        "day": dayOfYear(new Date(Date.now())) + this.wateringperiod,
         "saved": true
       });
 

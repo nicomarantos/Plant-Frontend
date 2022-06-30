@@ -2,6 +2,7 @@
   <div class="p-5 mb-2 bg-success bg-gradient text-white">
     <h1>Plantlexcion</h1>
   <div class="list-group-item list-group-item-success">
+    <delete-button :plants="this.plants"></delete-button>
     <offcanvas></offcanvas>
     <br>
     <plantcards :plants="this.plants"></plantcards>
@@ -13,11 +14,13 @@
 /*eslint-disable*/
 import plantcards from '@/components/plantcards'
 import offcanvas from '@/components/offcanvas'
+import deleteButton from '@/components/deleteButton'
 export default {
   name: 'PlantLexicon',
   components: {
     plantcards,
-    offcanvas
+    offcanvas,
+    deleteButton
   },
   data () {
     return {

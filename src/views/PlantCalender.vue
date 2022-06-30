@@ -69,32 +69,37 @@ export default {
         this.plants.push(plant)
       }))
       .then(plants=> {
-        return this.plants.forEach(plants=>{
-          const endpoint = process.env.VUE_APP_BACKEND_BASE_URL + '/api/v1/plant/' + plant.id
-          const myHeaders = new Headers();
-          myHeaders.append("Content-Type", "application/json");
+        return this.plants.forEach(plant=>{
+          if(plant.saved=true) {
+            const dayOfYear = date => Math.floor((date - new Date(date.getFullYear(), 0, 0)) / (1000 * 60 * 60 * 24))
+            const endpoint = process.env.VUE_APP_BACKEND_BASE_URL + '/api/v1/plant/' + plant.id
+            const myHeaders = new Headers();
+            myHeaders.append("Content-Type", "application/json");
 
-          const raw = JSON.stringify({
-            "commonName": plant.commonName,
-            "botanicalName": plant.botanicalName,
-            "description": plant.description,
-            "wateringperiod": plant.wateringperiod,
-            "wateringperiodCurrent": plant.wateringperiod+1,
-            "day": plant.day,
-            "saved": true
-          });
+            const raw = JSON.stringify({
+              "commonName": plant.commonName,
+              "botanicalName": plant.botanicalName,
+              "description": plant.description,
+              "wateringperiod": plant.wateringperiod,
+              "wateringperiodCurrent":dayOfYear(new Date(Date.now())),
+              //"wateringperiodCurrent":dayOfYear(new Date(Date.now()))-plant.day,
+              "day": plant.day,
+              "saved": true
+            });
 
-          const requestOptions = {
-            method: 'PUT',
-            headers: myHeaders,
-            body: raw,
-            redirect: 'follow'
-          };
+            const requestOptions = {
+              method: 'PUT',
+              headers: myHeaders,
+              body: raw,
+              redirect: 'follow'
+            };
 
-          fetch(endpoint, requestOptions)
-            .then(async response => await response.json())
-            .then(result => console.log(result))
-            .catch(error => console.log('error', error));
+            fetch(endpoint, requestOptions)
+              .then(async response => await response.json())
+              .then(result => console.log(result))
+              .catch(error => console.log('error', error));
+          }
+
         })
       })
       .catch(error => console.log('error', error))
