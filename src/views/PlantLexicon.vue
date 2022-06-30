@@ -4,6 +4,7 @@
   <div class="list-group-item list-group-item-success">
     <delete-button :plants="this.plants"></delete-button>
     <offcanvas></offcanvas>
+    <delete-offcanvas :plants="this.plants"></delete-offcanvas>
     <br>
     <plantcards :plants="this.plants"></plantcards>
   </div>
@@ -14,13 +15,14 @@
 /*eslint-disable*/
 import plantcards from '@/components/plantcards'
 import offcanvas from '@/components/offcanvas'
-import deleteButton from '@/components/deleteButton'
+import deleteOffcanvas from '@/components/deleteOffcanvas'
 export default {
   name: 'PlantLexicon',
   components: {
     plantcards,
     offcanvas,
-    deleteButton
+    deleteOffcanvas
+
   },
   data () {
     return {
