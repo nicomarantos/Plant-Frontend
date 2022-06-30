@@ -72,7 +72,7 @@ export default {
       const valid = this.validate()
       if(valid===true) {
         const endpoint = process.env.VUE_APP_BACKEND_BASE_URL + '/api/v1/plant/'
-
+        const dayOfYear = date => Math.floor((date - new Date(date.getFullYear(), 0, 0)) / (1000 * 60 * 60 * 24))
         const myHeaders = new Headers();
         myHeaders.append("Content-Type", "application/json");
         const raw = JSON.stringify({
@@ -81,7 +81,7 @@ export default {
           "description": this.description,
           "wateringperiod": this.wateringperiod,
           "wateringperiodCurrent": this.wateringperiod,
-          "day": 100,
+          "day": dayOfYear(new Date(Date.now())) + this.wateringperiod,
           "saved": false
         })
         console.log("lief durch")
