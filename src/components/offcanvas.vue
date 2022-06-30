@@ -84,7 +84,6 @@ export default {
           "day": dayOfYear(new Date(Date.now())) + this.wateringperiod,
           "saved": false
         })
-        console.log("lief durch")
         ;
 
         const requestOptions = {

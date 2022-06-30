@@ -23,7 +23,7 @@
               >
             </h4>
             <div class="d-grid gap-2 col-14">
-              <button class="btn-sm btn-primary" type="submit" @click="updateWateringperiod (plant)">
+              <button class="btn-sm btn-primary" type="submit" @click="updateWateringperiodCurrent (plant)">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="16"
@@ -81,7 +81,7 @@ export default {
     }
   },
   methods: {
-    updateWateringperiod (plant) {
+    updateWateringperiodCurrent (plant) {
       const endpoint = process.env.VUE_APP_BACKEND_BASE_URL + '/api/v1/plant/' + plant.id
 
       const myHeaders = new Headers();
