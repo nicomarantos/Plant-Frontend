@@ -42,7 +42,7 @@
         <br>
       <div class="mt-1 d-flex w-100 justify-content-between">
         <button class="btn btn-success" type="submit" @click="saveCustomPlant">save plant</button>
-        <button class="btn btn-danger" type="reset" @click="saveCustomPlant">reset</button>
+        <button class="btn btn-secondary" type="reset" @click="resetValues">reset</button>
       </div>
       </form>
     </div>

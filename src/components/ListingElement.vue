@@ -93,8 +93,8 @@ export default {
         "botanicalName": plant.botanicalName,
         "description": plant.description,
         "wateringperiod": plant.wateringperiod,
-        "wateringperiodCurrent": plant.wateringperiod,
-        "day": dayOfYear(new Date(Date.now())) + this.wateringperiod,
+        "wateringperiodCurrent": plant.day - dayOfYear(new Date(Date.now())),
+        "day": plant.day,
         "saved": true
       });
 
