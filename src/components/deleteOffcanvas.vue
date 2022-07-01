@@ -13,7 +13,7 @@
         <form class="text-start needs-validation" novalidate>
 
           <div class="mb-3">
-            <label for="formGroupExampleInput2" class="form-label needs-validation">Common Name</label>
+            <label for="formGroupExampleInput2" class="form-label needs-validation">Common Name of the plant you want to delete from the Databank.</label>
             <input type="text" class="form-control" id="formGroupExampleInput2" v-model="commonName" required>
             <div class="invalid-feedback">
               Please provide a Commonname.
@@ -21,7 +21,7 @@
           </div>
           <br>
           <div class="mt-1 d-flex w-100 justify-content-between">
-            <button class="btn btn-danger" type="button" @click="deletePlant">delete plant</button>
+            <button class="btn btn-danger" type="submit" @click="deletePlant">delete plant</button>
             <button class="btn btn-secondary" type="reset" @click="resetValues">reset</button>
           </div>
         </form>

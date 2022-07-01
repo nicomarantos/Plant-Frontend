@@ -2,7 +2,6 @@
   <div class="p-5 mb-2 bg-success bg-gradient text-white">
     <h1>Plantlexcion</h1>
   <div class="list-group-item list-group-item-success">
-    <delete-button :plants="this.plants"></delete-button>
     <offcanvas></offcanvas>
     <delete-offcanvas :plants="this.plants"></delete-offcanvas>
     <br>
