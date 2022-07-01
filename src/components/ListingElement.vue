@@ -126,7 +126,7 @@ export default {
         "day": plant.day,
         "saved": false
       });
-
+      console.log('Vor dem reload' + plant.commonName,+" = " +plant.saved)
       const requestOptions = {
         method: 'PUT',
         headers: myHeaders,
