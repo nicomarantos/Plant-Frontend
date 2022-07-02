@@ -3,9 +3,9 @@
     <div class="row row-cols-1 row-cols-md-2 g-4">
       <div class="col" v-for="plant in plants" :key="plant.id">
         <div class="card h-100">
-          <img :src="getAvatar(plant)" class="card-img-top" :alt="plant.commonName + ' ' + plant.botanicalName">
+          <img :src="getAvatar(plant)" class="card-img-top" :alt="plant.botanicalName">
           <div class="card-body" >
-            <h5 class="card-title">{{plant.commonName}} oder auch {{plant.botanicalName}}</h5>
+            <h5 class="card-title">{{plant.commonName}}</h5>
             <p class="card-text">Das ist die {{plant.botanicalName}} oder zu Deutsch {{plant.commonName}}.
               <br>Diese Pflanze wurde {{plant.saved ? 'gespeichert': 'noch nicht gespeichert'}}</p>
             <div class =" mb-1 card-text">
