@@ -8,7 +8,7 @@ describe('Testing PlantCards.vue', () => {
       propsData: {
         plants: [
             {
-      Id: 1, 
+      Id: 1,
           commonName: 'plant',
       botanicalName: 'plant1',
       description: 'its a plant',
@@ -25,4 +25,9 @@ describe('Testing PlantCards.vue', () => {
     const cardTitle = wrapper.find('.card-title')
     expect(cardTitle.text()).toBe('plant')
   })
+  
+
+
+
 })
+

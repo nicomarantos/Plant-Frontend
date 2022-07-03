@@ -31,4 +31,12 @@ describe('Testing PlantCalender.vue', () => {
     const Buttons = wrapper.findComponent(sortButtons)
     expect(Buttons.exists()).toBeTruthy()
   })
+
+  it('should not show a listing element by default when there is no saved plant', () => {
+    // when
+    const wrapper = mount(PlantCalender)
+
+    // then
+    expect(wrapper.find('#ListlingElement').classes()).not.toContain('show')
+  })
 })
