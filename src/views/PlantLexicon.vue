@@ -12,15 +12,15 @@
 
 <script>
 /*eslint-disable*/
-import plantcards from '@/components/plantcards'
-import offcanvas from '@/components/offcanvas'
-import deleteOffcanvas from '@/components/deleteOffcanvas'
+import Plantcards from '@/components/Plantcards'
+import Offcanvas from '@/components/Offcanvas'
+import DeleteOffcanvas from '@/components/DeleteOffcanvas'
 export default {
   name: 'PlantLexicon',
   components: {
-    plantcards,
-    offcanvas,
-    deleteOffcanvas
+    Plantcards,
+    Offcanvas,
+    DeleteOffcanvas
 
   },
   data () {

@@ -26,7 +26,7 @@
 <script>
 /*eslint-disable*/
 export default {
-  name: "plantcards",
+  name: "Plantcards",
   props: {
     plants: {
       type: Array,

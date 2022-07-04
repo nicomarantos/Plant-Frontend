@@ -52,7 +52,7 @@
 <script>
 /*eslint-disable*/
 export default {
-  name: "offcanvas",
+  name: "Offcanvas",
   data() {
     return {
       botanicalName: '',

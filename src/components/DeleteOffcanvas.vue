@@ -35,7 +35,7 @@
 <script>
 /*eslint-disable*/
 export default {
-  name: "deleteOffcanvas",
+  name: "DeleteOffcanvas",
   props: {
     plants: {
       type: Array,
