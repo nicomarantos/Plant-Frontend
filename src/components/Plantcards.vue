@@ -49,6 +49,8 @@ export default {
       if (plant.botanicalName === 'Sanseviera') {
         return require('../assets/Sanseviera.jpg')
       }
+
+      return require(('../assets/blank_plant.webp'))
     },
     test (plant) {
       console.log(plant.commonName)
