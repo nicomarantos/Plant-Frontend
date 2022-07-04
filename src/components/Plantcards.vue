@@ -8,7 +8,7 @@
             <h3 class="card-title">{{plant.commonName}}</h3>
             <img :src="getAvatar(plant)" class="card-img-top" :alt="plant.botanicalName">
 
-            <p class="card-text">The {{plant.botanicalName}} or commonnly known as {{plant.commonName}}.</p>
+            <p class="card-text">The {{plant.botanicalName}} or commonly known as {{plant.commonName}}.</p>
             <div class =" mb-1 card-text">
               <H6>{{plant.description}}</H6>
               <p></p>

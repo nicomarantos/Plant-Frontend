@@ -1,6 +1,6 @@
 <template>
   <div class="p-5 mb-2 bg-success bg-gradient text-white">
-    <h1>Plantlexcion</h1>
+    <h1>Plant lexicon</h1>
   <div class="list-group-item list-group-item-success">
     <offcanvas></offcanvas>
     <delete-offcanvas :plants="this.plants"></delete-offcanvas>
