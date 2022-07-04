@@ -41,14 +41,68 @@ export default {
   methods: {
     getAvatar (plant) {
       console.log(plant.commonName)
-      if (plant.botanicalName === 'Monstera Deliciosa') {
-        return require('../assets/Monstera.jpg')
+      if (plant.botanicalName === 'Monstera deliciosa') {
+        return require('../assets/Monstera.webp')
       }
       if (plant.botanicalName === 'Alocasia Zebrina') {
         return require('../assets/alocasia_zebrina.webp')
       }
       if (plant.botanicalName === 'Sanseviera') {
-        return require('../assets/Sanseviera.jpg')
+        return require('../assets/Sanseviera.webp')
+      }
+      if (plant.botanicalName === 'Chlorophytum comosum') {
+        return require('../assets/spider_plant.webp')
+      }
+      if (plant.botanicalName === 'Maranta Leuconeura') {
+        return require('../assets/maranta_leuconeura.webp')
+      }
+      if (plant.botanicalName === 'Ficus elastica') {
+        return require('../assets/ficus_elastica.webp')
+      }
+      if (plant.botanicalName === 'Philodendron Florida Green') {
+        return require('../assets/philodendron_florida_green.webp')
+      }
+      if (plant.botanicalName === 'Anthurium clarinervium') {
+        return require('../assets/Anthurium_clarinervium.webp')
+      }
+      if (plant.botanicalName === 'Monstera adansonii') {
+        return require('../assets/Monstera_adansonii.webp')
+      }
+      if (plant.botanicalName === 'Pachira aquatica') {
+        return require('../assets/Pachira_aquatica.webp')
+      }
+      if (plant.botanicalName === 'Ficus lyrata') {
+        return require('../assets/Ficus_lyrata.webp')
+      }
+      if (plant.botanicalName === 'Strelitzia nicolai') {
+        return require('../assets/Strelitzia_nicolai.webp')
+      }
+      if (plant.botanicalName === 'Dracaena marginata') {
+        return require('../assets/Dracaena_marginata.webp')
+      }
+      if (plant.botanicalName === 'Calathea lancifolia') {
+        return require('../assets/Calathea_lancifolia.webp')
+      }
+      if (plant.botanicalName === 'Epipremnum aureum') {
+        return require('../assets/Epipremnum_aureum.webp')
+      }
+      if (plant.botanicalName === 'Aloe barbadensis') {
+        return require('../assets/Aloe_barbadensis.webp')
+      }
+      if (plant.botanicalName === 'Sansevieria cylindrica') {
+        return require('../assets/Sansevieria_cylindrica.webp')
+      }
+      if (plant.botanicalName === 'Senecio rowleyanus') {
+        return require('../assets/Senecio_rowleyanus.webp')
+      }
+      if (plant.botanicalName === 'Chamaedorea seifrizii') {
+        return require('../assets/Chamaedorea_seifrizii.webp')
+      }
+      if (plant.botanicalName === 'Hypoestes phyllostachya') {
+        return require('../assets/Hypoestes_phyllostachya.webp')
+      }
+      if (plant.botanicalName === 'Calathea ornata') {
+        return require('../assets/Calathea_ornata.webp')
       }
 
       return require(('../assets/blank_plant.webp'))
