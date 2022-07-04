@@ -13,19 +13,18 @@ Die Funktionalitäten werden separat erklärt.
 
 ### Plant Calendar
 ```
-Der Plant Calendar bietet die Möglichkeit seine in der Wateringchecklist
-gespeicherten Pflanzen zu sehen.
+Der Plant Calendar bietet die Möglichkeit seine in einer Wateringchecklist
+gespeicherten Pflanzen zu sehen. Diese wird genutzt um de Nutzer der App daran zu erinnern
+wann er seine Pflanze giesen muss.
 "Days until plant needs to be watered again" zeigt an, wann die Pflanze,
-anhand der vorher eingestellten, oder selbst gewählten, Zeit in Tagen wieder
+anhand der vorher eingestellten, oder selbst gewählten (bei selbst custom erstellten Pflanzenn), Zeit in Tagen wieder
 gegossen werden sollte.
-Der Countdown reduziert sich pro Tag um eins, bis die null erreicht wurde, sodass
-die Nutzer*innen spätestens jetzt ihre Pflanzen gießen sollten.
-Wenn der Timer abgelaufen ist oder schon vorher die Pflanze gegossen wurde, muss
-der Button "watered" getätigt werden und der Timer startet wieder von neuem.
+Der Countdown reduziert sich pro Tag um eins. Und wird resetet wenn man "watered" Button drückt.
 Die Pflanzen können auch aus der Wateringchecklist wieder entfernt werden, durch den
 roten Button an der Seite.
 Des Weiteren können die gespeicherten Pflanzen nach alphabetischer Reihenfolge oder
 nach der Zeit, wann sie gegossen werden sollen, sortiert werden.
+Der Timer wird durch reload der Home View aktualisiert.
 ```
 
 ### Plant lexicon
@@ -41,7 +40,7 @@ Zudem existieren oben rechts zwei weiter Buttons, mit denen eine Custom Pflanze 
 gelöscht werden kann.
 Beim erstellen der Custom Pflanze müssen umgangssprachlicher Name, lateinischer Name,
 eine kurze Beschreibung (bis zu 3 Sätze) und die Watering period angegeben werden.
-Wenn man eine der Pflanzen löschen möchte, so muss man auf den Button drücken und nur den
+Wenn man eine der Pflanzen aus dem System löschen möchte, so muss man auf den Button drücken und nur den
 umgangssprachlichen Namen eingeben.
 ```
 
