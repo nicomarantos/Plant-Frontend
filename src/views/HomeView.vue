@@ -2,13 +2,14 @@
   <div class="home">
     <img alt="plantasticLogo" src="../assets/plantasticLogo.png">
     <h2>Plantastic</h2>
-    <HelloWorld>
-    </HelloWorld>
+    <br>
+    <br>
+    <br>
+    <h5>By Nicolas Marantos and Max Herget</h5>
   </div>
 </template>
 <script>
 /*eslint-disable*/
-// @ is an alias to /src
 import HelloWorld from '@/components/HelloWorld.vue'
 
 export default {
@@ -41,7 +42,6 @@ export default {
               "botanicalName": plant.botanicalName,
               "description": plant.description,
               "wateringperiod": plant.wateringperiod,
-              //"wateringperiodCurrent":dayOfYear(new Date(Date.now())),
               "wateringperiodCurrent":plant.day-dayOfYear(new Date(Date.now())),
               "day": plant.day,
               "saved": true

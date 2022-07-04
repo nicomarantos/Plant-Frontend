@@ -1,11 +1,11 @@
 <template>
   <div class="p-5 mb-2 bg-success bg-gradient text-white">
     <h1>Wateringlist</h1>
-  <div class="list-group-item list-group-item-success">
+    <div class="list-group-item list-group-item-success">
     <sort-buttons :plants="this.plants"></sort-buttons>
     <ListingElement :plants="this.plants"></ListingElement>
   </div>
-    </div>
+</div>
 </template>
 
 <script>
@@ -21,7 +21,6 @@ export default {
   methods :  {
      updateWateringperiodCurrent(plant)
     {
-      //if schleife mit saved==true noch rein
       console.log('geht durch')
         const endpoint = process.env.VUE_APP_BACKEND_BASE_URL + '/api/v1/plant/' + plant.id
         const myHeaders = new Headers();

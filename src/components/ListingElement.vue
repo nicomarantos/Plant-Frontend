@@ -1,7 +1,6 @@
 <template>
   <div v-for="plant in plants" :key="plant.id">
     <div v-if="plant.saved === true">
-      <!-- <div class="col" v-for="plant in ListingElement" :key="plant.id"> -->
 <br>
       <a
         href="#"
