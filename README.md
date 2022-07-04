@@ -17,7 +17,7 @@ Der Plant Calendar bietet die Möglichkeit seine in einer Wateringchecklist
 gespeicherten Pflanzen zu sehen. Diese wird genutzt um de Nutzer der App daran zu erinnern
 wann er seine Pflanze giesen muss.
 "Days until plant needs to be watered again" zeigt an, wann die Pflanze,
-anhand der vorher eingestellten, oder selbst gewählten (bei selbst custom erstellten Pflanzenn), Zeit in Tagen wieder
+anhand der vorher eingestellten, oder selbst gewählten (bei selbst custom erstellten Pflanzen), Zeit in Tagen wieder
 gegossen werden sollte.
 Der Countdown reduziert sich pro Tag um eins. Und wird resetet wenn man "watered" Button drückt.
 Die Pflanzen können auch aus der Wateringchecklist wieder entfernt werden, durch den
